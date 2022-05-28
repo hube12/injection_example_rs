@@ -1,0 +1,21 @@
+[package]
+name = "injection"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "payload"
+path = "src/lib.rs"
+crate-type=["cdylib"]
+
+[[bin]]
+name = "runner"
+path = "src/main.rs"
+
+[[bin]]
+name = "test_process"
+path = "src/test_process.rs"
+
+[dependencies]
+dll-syringe = { version = "0.11.2", features = ["full"] }
+current_platform = "0.2.0"
